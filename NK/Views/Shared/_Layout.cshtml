@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+
+
+
+    <meta http-equiv="refresh" content="60">
+    <meta content="name="viewport"width=device-width, initial-scale=1.0, maximum-scale=1.0" user-scalable="no">
+    <meta charset="utf-8">
+
+    <title>ELBRACO Technoland</title>
+    
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+    <link href="~/dist/css/animate.css" rel="stylesheet" />
+    @*<link href="~/dist/css/nightSky.css" rel="stylesheet"/>*@
+    <link href="~/dist/css/CustomStyles.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="container body-content night">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

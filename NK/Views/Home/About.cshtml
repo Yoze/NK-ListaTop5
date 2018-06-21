@@ -1,0 +1,44 @@
+﻿
+@model NK.Models.NK17ViewModel
+
+
+@{
+    ViewBag.Title = "About";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+
+<table>
+
+    <thead>
+        <tr>
+            <td>KP Šifra</td>
+            <td>Ime</td>
+            <td>PZP</td>
+            <td>Mesto</td>
+            <td>Iznos kupovine</td>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var item in Model.ListaTopKupacaNK17)
+        {
+            <tr>
+                <td>@item.KPSIFRA</td>
+                <td>@item.IME</td>
+                <td>@item.PZP</td>
+                <td>@item.MESTO</td>
+                <td>@item.SumOfUKUPNO</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+
+<p>Use this area to provide additional information.</p>

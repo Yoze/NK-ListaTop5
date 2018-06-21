@@ -1,0 +1,223 @@
+﻿
+@model NK.Models.NK18ViewModel
+
+
+@section scripts {
+
+    <script>
+
+        // prikaz datum i vremena
+
+        var Vreme = (function prikaziVreme() {
+            var currentDate = new Date();
+            var currentTime = currentDate.getTime();
+
+            var options = {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            }
+
+            var vremeZaPrikaz = new Intl.DateTimeFormat('sr-Latn', options).format(currentTime);
+
+            document.getElementById('time').innerHTML = vremeZaPrikaz;
+        })();
+
+    </script>
+
+}
+
+<div class="row">
+    <h2 class="page-header" style="color:#D50000; padding-left:20px; font-size: 2em;"><span><img src="~/dist/img/elbsNatpis_3a.png" alt="elbsLogo"  /></span>&nbsp; Kula 4. rođendan</h2>
+    @*<div class="col-md-6">
+            <img id="imgElbsNatpis" src="~/dist/img/elbsNatpis.png" alt="elbsNatpis" />
+            <p id="time"></p>
+        </div>
+        <div class="col-md-6">
+            <img id="imgRodj" src="~/dist/img/rodjNatpis.png" alt="rodjNatpis" />
+        </div>*@
+</div>
+
+
+<div class="row animated fadeIn">
+
+
+    @{
+        int brojac = 1;
+
+        foreach (var item in Model.ListaTopKupacaNK18)
+        {
+
+            <div class="col-md-8 col-md-offset-2">
+                <!-- Widget: user widget style 1 -->
+                <div class="box box-widget widget-user night">
+                    <!-- Add the bg color to the header using any of the bg-* classes -->
+                    <div class="widget-user-image">
+                        @{
+                            switch (brojac)
+                            {
+                                case 1:
+                                    <img class="img-circle" src="~/dist/img/pos_1_new.png" style="border:none;  width: 105px;" alt="imgPosition">
+                                    break;
+                                case 2:
+                                    <img class="img-circle" src="~/dist/img/pos_2_new.png" style="border:none;  width: 105px" alt="imgPosition">
+                                    break;
+                                case 3:
+                                    <img class="img-circle" src="~/dist/img/pos_3_new.png" style="border:none;  width: 105px" alt="imgPosition">
+                                    break;
+                                case 4:
+                                    <img class="img-circle" src="~/dist/img/pos_4.png" alt="imgPosition">
+                                    break;
+                                case 5:
+                                    <img class="img-circle" src="~/dist/img/pos_5.png" alt="imgPosition">
+                                    break;
+                                @*case 6:
+                                    <img class="img-circle" src="~/dist/img/pos_6.png" alt="imgPosition">
+                                            break;
+                                        case 7:
+                                            <img class="img-circle" src="~/dist/img/pos_7.png" alt="imgPosition">
+                                            break;
+                                        case 8:
+                                            <img class="img-circle" src="~/dist/img/pos_8.png" alt="imgPosition">
+                                            break;
+                                        case 9:
+                                            <img class="img-circle" src="~/dist/img/pos_9.png" alt="imgPosition">
+                                            break;
+                                        case 10:
+                                            <img class="img-circle" src="~/dist/img/pos_10.png" alt="imgPosition">
+                                            break;
+                                        case 11:
+                                            <img class="img-circle" src="~/dist/img/pos_11.png" alt="imgPosition">
+                                            break;
+                                        case 12:
+                                            <img class="img-circle" src="~/dist/img/pos_12.png" alt="imgPosition">
+                                            break;
+                                        case 13:
+                                            <img class="img-circle" src="~/dist/img/pos_13.png" alt="imgPosition">
+                                            break;
+                                        case 14:
+                                            <img class="img-circle" src="~/dist/img/pos_14.png" alt="imgPosition">
+                                            break;
+                                        case 15:
+                                            <img class="img-circle" src="~/dist/img/pos_15.png" alt="imgPosition">
+                                            break;
+                                        case 16:
+                                            <img class="img-circle" src="~/dist/img/pos_16.png" alt="imgPosition">
+                                            break;
+                                        case 17:
+                                            <img class="img-circle" src="~/dist/img/pos_17.png" alt="imgPosition">
+                                            break;
+                                        case 18:
+                                            <img class="img-circle" src="~/dist/img/pos_18.png" alt="imgPosition">
+                                            break;
+                                        case 19:
+                                            <img class="img-circle" src="~/dist/img/pos_19.png" alt="imgPosition">
+                                            break;
+                                        case 20:
+                                            <img class="img-circle" src="~/dist/img/pos_20.png" alt="imgPosition">
+                                            break;
+                                        case 21:
+                                            <img class="img-circle" src="~/dist/img/pos_21.png" alt="imgPosition">
+                                            break;
+                                        case 22:
+                                            <img class="img-circle" src="~/dist/img/pos_22.png" alt="imgPosition">
+                                            break;
+                                        case 23:
+                                            <img class="img-circle" src="~/dist/img/pos_23.png" alt="imgPosition">
+                                            break;
+                                        case 24:
+                                            <img class="img-circle" src="~/dist/img/pos_24.png" alt="imgPosition">
+                                            break;
+                                        case 25:
+                                            <img class="img-circle" src="~/dist/img/pos_25.png" alt="imgPosition">
+                                            break;*@
+                                default:
+                                    break;
+                            }
+                        }
+                    </div>
+                    <div class="widget-user-header night">
+                        <div id="slikaNagrade">
+                            @{
+                                switch (brojac)
+                                {
+                                    case 1:
+                                        <img class="imgNagrada" src="~/dist/img/bicikl.png" alt="imgNagrada">
+                                        break;
+                                    case 2:
+                                        <img class="imgNagrada" src="~/dist/img/bazen.png" alt="imgNagrada">
+                                        break;
+                                    case 3:
+                                        <img class="imgNagrada" src="~/dist/img/trimer.png" alt="imgNagrada">
+                                        break;
+
+                                    @*case 4:
+                                        case 5:
+                                            <img class="imgNagrada" src="~/dist/img/4-5_nag.png" alt="imgNagrada">
+                                            break;
+
+                                        case 6:
+                                        case 7:
+                                        case 8:
+                                        case 9:
+                                            <img class="imgNagrada" src="~/dist/img/6-9_nag.png" alt="imgNagrada">
+                                            break;
+
+                                        case 10:
+                                        case 11:
+                                            <img class="imgNagrada" src="~/dist/img/10-12_nag.png" alt="imgNagrada">
+                                            break;
+
+                                        case 12:
+                                        case 13:
+                                        case 14:
+                                        case 15:
+                                            <img class="imgNagrada" src="~/dist/img/13-15_nag.png" alt="imgNagrada">
+                                            break;
+
+                                        case 16:
+                                        case 17:
+                                        case 18:
+                                        case 19:
+                                        case 20:
+                                        case 21:
+                                        case 22:
+                                        case 23:
+                                            <img class="imgNagrada" src="~/dist/img/16-23_nag.png" style="width: 80%;" alt="imgNagrada">
+                                            break;
+
+                                        case 24:
+                                        case 25:
+                                            <img class="imgNagrada" alt="imgNagrada">
+                                            break;*@
+                                    default:
+                                        break;
+                                }
+                            }
+                        </div>
+                        <h2 class="widget-user-username podaciKorisnika">@item.IME &nbsp;@item.PZP.</h2>
+                        <h4 class="widget-user-desc podaciKorisnika"><strong>@item.MESTO</strong></h4>
+                        <h3 class="widget-user-desc ukupnaCifra">TLK:&nbsp; @item.KPSIFRA</h3>
+                    </div>
+                </div>
+            </div>
+            brojac++;
+        }
+    }
+
+</div>
+<div class="row">
+    <div id="footer" class="col-md-4 col-md-offset-5">
+        <h5>
+            <a href="http://www.codespace.rs" target="_blank">
+                <img src="~/dist/img/CodespaceSoftwareServicesSmall-EN.jpg" alt="Codespace" style="width:20%" />
+                <span>&nbsp;Powered by CODESPACE &reg;</span>
+            </a>
+        </h5>
+    </div>
+</div>
+
+
